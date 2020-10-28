@@ -16,7 +16,7 @@ Imports:
   pbmcapply, 
   parallel, 
   qvalue, 
-  Rcpp (== 1.0.5), 
+  Rcpp (1.0.5), 
   Matrix, 
   knitr, 
   rmarkdown, 
@@ -24,7 +24,7 @@ Imports:
 VignetteBuilder: 
   knitr
 LinkingTo: 
-  Rcpp, 
-  RcppArmadillo, 
+  Rcpp (1.0.5), 
+  RcppArmadillo (0.9.900.3.0), 
   RcppEigen
 RoxygenNote: 6.1.1
