@@ -21,3 +21,22 @@ PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
 CXXFLAGS= -O3 
 PKG_CPPFLAGS = -I../inst/include
 
+XCBASE:=$(shell xcrun --show-sdk-path)
+LLVMBASE:=$(shell brew --prefix llvm)
+GCCBASE:=$(shell brew --prefix gcc)
+GETTEXT:=$(shell brew --prefix gettext)
+
+CC=$(LLVMBASE)/bin/clang -fopenmp
+CXX=$(LLVMBASE)/bin/clang++ -fopenmp
+CXX11=$(LLVMBASE)/bin/clang++ -fopenmp
+CXX14=$(LLVMBASE)/bin/clang++ -fopenmp
+CXX17=$(LLVMBASE)/bin/clang++ -fopenmp
+CXX1X=$(LLVMBASE)/bin/clang++ -fopenmp
+
+CPPFLAGS=-isystem "$(LLVMBASE)/include" -isysroot "$(XCBASE)"
+LDFLAGS=-L"$(LLVMBASE)/lib" -L"$(GETTEXT)/lib" --sysroot="$(XCBASE)"
+
+FC=$(GCCBASE)/bin/gfortran -fopenmp
+F77=$(GCCBASE)/bin/gfortran -fopenmp
+FLIBS=-L$(GCCBASE)/lib/gcc/9/ -lm
+
