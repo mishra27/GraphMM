@@ -10,8 +10,8 @@
 
 # choice of compiler, by default use system preference.
 export CC=gcc
-export CXX=g++
-export MPICXX = mpicxx
+#export CXX=g++
+#export MPICXX = mpicxx
 
 CXX_STD = CXX11
 
