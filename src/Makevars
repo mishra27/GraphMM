@@ -9,7 +9,7 @@
 ## support within Armadillo prefers / requires it
 
 # choice of compiler, by default use system preference.
-export CC=gcc
+export CC=gcc-7
 export CXX=g++
 export MPICXX = mpicxx
 
