@@ -10,33 +10,13 @@
 
 # choice of compiler, by default use system preference.
 export CC=gcc
-#export CXX=g++
-export MPICXX = mpicxx
+export CXX=g++
+# export MPICXX = mpicxx
 
 CXX_STD = CXX11
-
 
 PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) 
 PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
 
-CXXFLAGS= -O3 
+# CXXFLAGS= -O3 
 PKG_CPPFLAGS = -I../inst/include
-
-XCBASE:=$(shell xcrun --show-sdk-path)
-LLVMBASE:=$(shell brew --prefix llvm)
-GCCBASE:=$(shell brew --prefix gcc)
-GETTEXT:=$(shell brew --prefix gettext)
-
-C=/usr/local/opt/llvm/bin/clang
-CXX=/usr/local/opt/llvm/bin/clang++
-
-PPFLAGS=-isystem "$(LLVMBASE)/include" -isysroot "$(XCBASE)"
-LDFLAGS=-L"$(LLVMBASE)/lib" -L"$(GETTEXT)/lib" --sysroot="$(XCBASE)"
-
-#CPPFLAGS += -Xclang -fopenmp
-#LDFLAGS += -lomp
-
-FC=$(GCCBASE)/bin/gfortran 
-F77=$(GCCBASE)/bin/gfortran 
-FLIBS=-L$(GCCBASE)/lib/gcc/9/ -lm
-
