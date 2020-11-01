@@ -27,23 +27,16 @@ LLVMBASE:=$(shell brew --prefix llvm)
 GCCBASE:=$(shell brew --prefix gcc)
 GETTEXT:=$(shell brew --prefix gettext)
 
-CC=$(LLVMBASE)/bin/clang -fopenmp
-CXX=$(LLVMBASE)/bin/clang++ -fopenmp
-CXX11=$(LLVMBASE)/bin/clang++ -fopenmp
-CXX14=$(LLVMBASE)/bin/clang++ -fopenmp
-CXX17=$(LLVMBASE)/bin/clang++ -fopenmp
-CXX1X=$(LLVMBASE)/bin/clang++ -fopenmp
-
 C=/usr/local/opt/llvm/bin/clang
 CXX=/usr/local/opt/llvm/bin/clang++
 
-#CPPFLAGS=-isystem "$(LLVMBASE)/include" -isysroot "$(XCBASE)"
-#LDFLAGS=-L"$(LLVMBASE)/lib" -L"$(GETTEXT)/lib" --sysroot="$(XCBASE)"
+PPFLAGS=-isystem "$(LLVMBASE)/include" -isysroot "$(XCBASE)"
+LDFLAGS=-L"$(LLVMBASE)/lib" -L"$(GETTEXT)/lib" --sysroot="$(XCBASE)"
 
-CPPFLAGS += -Xclang -fopenmp
-LDFLAGS += -lomp
+#CPPFLAGS += -Xclang -fopenmp
+#LDFLAGS += -lomp
 
-FC=$(GCCBASE)/bin/gfortran -fopenmp
-F77=$(GCCBASE)/bin/gfortran -fopenmp
+FC=$(GCCBASE)/bin/gfortran 
+F77=$(GCCBASE)/bin/gfortran 
 FLIBS=-L$(GCCBASE)/lib/gcc/9/ -lm
 
