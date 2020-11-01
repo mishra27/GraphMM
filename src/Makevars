@@ -34,6 +34,9 @@ CXX14=$(LLVMBASE)/bin/clang++ -fopenmp
 CXX17=$(LLVMBASE)/bin/clang++ -fopenmp
 CXX1X=$(LLVMBASE)/bin/clang++ -fopenmp
 
+C=/usr/local/opt/llvm/bin/clang
+CXX=/usr/local/opt/llvm/bin/clang++
+
 #CPPFLAGS=-isystem "$(LLVMBASE)/include" -isysroot "$(XCBASE)"
 #LDFLAGS=-L"$(LLVMBASE)/lib" -L"$(GETTEXT)/lib" --sysroot="$(XCBASE)"
 
